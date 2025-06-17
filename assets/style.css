@@ -1,0 +1,156 @@
+/* General Body Styles */
+body {
+    font-family: 'sans-serif';
+    margin: 0;
+    background-color: #f5f5dc; /* Light beige background */
+    color: #333; /* Default text color */
+}
+
+/* Main Application Container (wrapping the whole UI) */
+/* Dash automatically creates a div with id _dash-app-content that wraps app.layout */
+#_dash-app-content > div {
+    max-width: 1000px; /* Max width of the main box */
+    margin: 20px auto; /* Centering the main box */
+    background-color: #ffffff; /* White rectangular box */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Slightly rounded corners for the main box */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0; /* Lighter border */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333; /* Dark grey/black for text */
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333; /* Dark grey/black for icons */
+}
+
+/* File Upload Container */
+#file-upload-container {
+    display: flex; /* Use flexbox to arrange sections horizontally */
+    justify-content: space-around; /* Distribute space evenly */
+    padding: 20px;
+    text-align: center; /* Center the content of child divs if they were inline-block */
+}
+
+/* Individual File Upload Section Styling */
+.file-section { /* Will add this class to each section div in app.py later if needed, or style by ID */
+    width: 30%; /* Each section takes roughly a third of the space */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#json-section, #csv-section, #excel-section {
+    /* Inherits .file-section styles if class is added, or apply shared styles here */
+    /* border: 1px solid #ddd; /* Adding a light border for separation if needed */
+    /* background-color: #f9f9f9; /* Slightly different background for sections if desired */
+    border-radius: 5px; /* Rounded corners for sections */
+}
+
+
+/* Stylized Smartphone Screen */
+.phone-screen {
+    width: 180px; /* Fixed width for the phone screen */
+    height: 250px; /* Fixed height for the phone screen */
+    background-color: #f0f0f0; /* Light grey representation of screen content area */
+    border: 10px solid #333; /* Dark grey/black phone frame */
+    border-radius: 20px; /* Rounded corners for the phone */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2); /* Inner shadow for screen depth */
+}
+
+/* Icon Placeholder Styling (adjust if using actual icons) */
+.icon-placeholder {
+    font-size: 40px; /* Adjust as needed */
+    color: #555; /* Darker grey for icon */
+    /* For actual images or SVGs, you'd style the <img> or <svg> tag */
+}
+/* Example: If using FontAwesome or similar icon library via dcc.Icon */
+/* .custom-icon-class { font-size: 50px; color: #333; } */
+
+
+/* UPLOAD Buttons (beneath phone screens) */
+.upload-button {
+    width: 80%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #333; /* Dark grey/black button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+/* Progress Dots Row */
+.dots-row {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #333; /* Dark grey/black dots */
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+/* File Type Buttons (Json, CSV, Excel) */
+.file-type-button {
+    width: 80%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: #333; /* Dark grey/black button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-type-button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+/* Specific Icon Placeholders - if needed for text based */
+#json-phone-screen .icon-placeholder,
+#csv-phone-screen .icon-placeholder,
+#excel-phone-screen .icon-placeholder {
+    padding: 20px;
+    text-align: center;
+    height: 100px; /* Adjust to fit within phone screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em; /* Resetting font size for the text placeholder */
+    color: #333;
+}
