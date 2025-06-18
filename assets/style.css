@@ -49,7 +49,7 @@ header button {
 
 /* Individual File Upload Section Styling */
 .file-section { /* Will add this class to each section div in app.py later if needed, or style by ID */
-    width: 30%; /* Each section takes roughly a third of the space */
+    width: 45%; /* Each section takes a larger portion of the space for two sections */
     padding: 20px;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     display: flex;
@@ -154,3 +154,99 @@ header button {
     font-size: 1em; /* Resetting font size for the text placeholder */
     color: #333;
 }
+
+/* Styling for dcc.Upload component using a class */
+.custom-upload-component {
+    width: 100%; /* Or adjust as needed, e.g., 90% of its container */
+    height: 80px; /* Increased height for better dropzone feel */
+    line-height: normal; /* Reset line-height if not needed for vertical centering this way */
+    border-width: 2px; /* Thicker border */
+    border-style: dashed;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto; /* Centering if width is less than 100% of parent */
+    padding: 10px;
+    border-color: #333;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: flex; /* To center children */
+    justify-content: center; /* To center children */
+    align-items: center; /* To center children */
+}
+
+.custom-upload-component:hover {
+    background-color: #efefef;
+    border-color: #555; /* Darken border on hover */
+}
+
+/* Styling the text content within dcc.Upload */
+.custom-upload-component > div { /* Targets the immediate child Div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    color: #333; /* Darker text for better readability */
+}
+
+.custom-upload-component a {
+    color: #007bff; /* Standard link color */
+    text-decoration: none; /* Removing underline for a cleaner look */
+    margin-top: 5px;
+    font-weight: bold;
+}
+.custom-upload-component a:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+}
+
+/* Styling for the output message divs */
+.output-message-div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left; /* Changed from center to left for better list display */
+    font-size: 0.95em;
+    min-height: 2.5em;
+    /* Adding a max-height and overflow for very long lists of files */
+    max-height: 150px; /* Example max height, adjust as needed */
+    overflow-y: auto; /* Add scroll if content exceeds max-height */
+    background-color: #f8f9fa; /* Slightly different background to distinguish the area */
+    border: 1px solid #e0e0e0; /* Subtle border */
+}
+/* The P tags inside will still get color from inline styles in callbacks.py */
+
+/* Submit Button Container Styling */
+#submit-button-container {
+    text-align: center; /* Center the button within this container */
+    padding: 20px;      /* Add some space around the button container */
+    margin-top: 10px;   /* Space above the submit button area */
+    border-top: 1px solid #eee; /* Optional: a light separator line above */
+}
+
+/* Global Submit Button Styling */
+#global-submit-button {
+    padding: 12px 25px; /* Generous padding for a primary button */
+    font-size: 18px;    /* Larger font size for a primary button */
+    color: #ffffff;     /* White text */
+    background-color: #333; /* Dark grey/black background, consistent with other buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#global-submit-button:hover {
+    background-color: #555; /* Slightly lighter on hover, consistent */
+}
+
+/* Submit Status Output Styling */
+#submit-status-output {
+    text-align: center; /* Center the status message */
+    padding: 10px;
+    font-size: 0.95em;
+    min-height: 2em; /* Ensure it has some height even when empty */
+    /* Color will be set by the callback for success/error if needed */
+}
+/* MF4 Data Display Area Styling and its contents were here - now removed */
