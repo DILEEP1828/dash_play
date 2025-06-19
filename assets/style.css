@@ -249,4 +249,60 @@ header button {
     min-height: 2em; /* Ensure it has some height even when empty */
     /* Color will be set by the callback for success/error if needed */
 }
-/* MF4 Data Display Area Styling and its contents were here - now removed */
+
+/* Plot Layout Specific Styling */
+
+/* Link back to upload page */
+/* dcc.Link renders an <a> tag, can be styled directly or via its parent if wrapped */
+/* No specific style needed if default link appearance is okay, or if inline style in plot_layout.py is sufficient. */
+/* The inline style in plot_layout.py: {'marginBottom': '20px', 'display': 'block'} is good. */
+
+/* Styling for containers of Slider and Dropdown (from inline styles in plot_layout.py) */
+/* We can abstract these if needed, but the inline ones are fine for now:
+   {'padding': '20px', 'border': '1px solid #eee', 'borderRadius': '5px', 'marginBottom': '20px'}
+*/
+
+/* Time Slider specific container styling (if needed beyond inline) */
+/* #time-slider-container { } */ /* Assuming the parent Div in plot_layout.py handles this */
+
+/* Signal Dropdown specific container styling (if needed beyond inline) */
+/* #signal-dropdown-container { } */ /* Assuming the parent Div in plot_layout.py handles this */
+
+/* General styling for labels within the plot layout if not covered globally */
+.plot-page-label { /* If we decide to add this class to html.Label in plot_layout.py */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Tabs styling */
+#plot-tabs {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Individual Tab styling (selected and unselected) */
+#plot-tabs .dash-tab { /* Targets specific Dash-generated class for tabs */
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; /* Separator line */
+    background-color: #f9f9f9;
+}
+
+#plot-tabs .dash-tab--selected {
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #007bff; /* Highlight selected tab */
+    background-color: #fff;
+}
+
+/* Graph component styling (if needed - usually they take up available space) */
+/* dcc.Graph components can have their figure's layout.margin adjusted in callbacks for spacing */
+#time-series-plot, #polygon-plot {
+    /* min-height: 400px; /* Ensure graphs have a minimum height */
+    /* No specific global styling needed here typically, handled by figure layout */
+}
+
+/* General container for the plot page if we wrap create_plot_layout's return in a classed Div */
+.plot-page-container {
+    padding: 20px; /* Add overall padding to the plot page if needed */
+}

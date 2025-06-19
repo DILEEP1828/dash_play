@@ -1,9 +1,9 @@
 import dash_html_components as html
 import dash_core_components as dcc # Make sure dcc is imported
 
-def create_layout():
+def create_layout(): # This function now specifically creates the upload page content
     layout = html.Div([
-        # dcc.Store components for pickle-file-store and mf4-file-store REMOVED
+        dcc.Store(id='mf4_file_for_plotting_store'), # Added this store
 
         html.Header([
             html.Button('X', id='close-button'),
